@@ -1,0 +1,61 @@
+body {
+
+    text-align: center;
+    }
+    #principal {
+        
+            display: block;
+            width: 500px;
+            margin: 50px auto;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #999999;
+            background: #DDDDDD;
+            
+            -moz-transition: -moz-transform 1s ease-in-out 0.5s;
+            -webkit-transition: -webkit-transform 1s ease-in-out 0.5s;
+            
+    -moz-border-image: url("diamonds.png") 29 stretch;
+-webkit-border-image: url("diamonds.png") 29 stretch;
+border-image: url("diamonds.png") 29 stretch;
+ /*Esta propiedad era usada para crear un segundo
+borde, y ahora ese borde puede ser mostrado alejado del borde real del elemento.*/
+    outline: 2px dashed #000099;
+    outline-offset: 15px;
+    /*border-radius da un estilo de esquina redondeada
+    –moz- y -webkit- para que funcinen bien en los navegadores */
+    -moz-border-radius: 20px 10px 30px 50px;
+-webkit-border-radius: 20px 10px 30px 50px;
+border-radius: 20px 10px 30px 50px;
+/*podremos aplicar sombras a nuestras cajas*/
+-moz-box-shadow: rgb(150,150,150) 5px 5px;
+-webkit-box-shadow: rgb(150,150,150) 5px 5px;
+box-shadow: rgb(150,150,150) 5px 5px;
+/*background con algunos
+pocos parámetros es suficiente para convertir su documento en una página web con
+aspecto profesional:*/
+background: -webkit-linear-gradient(top, #FFFFFF, #006699);
+background: -moz-linear-gradient(top, #FFFFFF, #006699);
+    }
+
+/*transformacion dinamica */
+#principal:hover{
+    -moz-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    }
+    #titulo {
+    /*permite a los diseñadores proveer un archivo conteniendo
+una fuente específica para mostrar sus textos en la página.*/
+        font: bold 36px MiNuevaFuente, verdana, sans-serif;
+    /* y para crear sombras para textos existe esta propiedad
+    de text-shadow*/
+    text-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
+    /*hsla(tono,
+saturación, luminosidad, opacidad)*/
+    color: hsla(120, 100%, 50%, 0.5);
+}
+
+@font-face {
+    font-family: 'MiNuevaFuente';
+    src: url('font.ttf');
+    }

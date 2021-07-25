@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Drag and Drop</title>
+<link rel="stylesheet" href="dragdrop.css">
+<script>
+    function iniciar(){
+var imagenes=document.querySelectorAll('#cajaimagenes > img');
+for(var i=0; i<imagenes.length; i++){
+imagenes[i].addEventListener('dragstart', arrastrado, false);
+}
+soltar=document.getElementById('cajasoltar');
+soltar.addEventListener('dragenter', function(e){
+e.preventDefault(); }, false);
+soltar.addEventListener('dragover', function(e){
+e.preventDefault(); }, false);
+soltar.addEventListener('drop', soltado, false);
+}
+function arrastrado(e){
+elemento=e.target;
+e.dataTransfer.setData('Text', elemento.getAttribute('id'));
+}
+function soltado(e){
+e.preventDefault();
+var id=e.dataTransfer.getData('Text');
+if(id!="imagen4"){
+var src=document.getElementById(id).src;
+soltar.innerHTML='<img src="'+src+'">';
+}else{
+soltar.innerHTML='la imagen no es admitida';
+}
+}
+window.addEventListener('load', iniciar, false);
+</script>
+</head>
+<body>
+<section id="cajasoltar">
+Arrastre y suelte las imágenes aquí
+</section>
+<section id="cajaimagenes">
+<img id="imagen1"
+src="http://www.minkbooks.com/content/monster1.gif">
+<img id="imagen2"
+src="http://www.minkbooks.com/content/monster2.gif">
+<img id="imagen3"
+src="http://www.minkbooks.com/content/monster3.gif">
+<img id="imagen4"
+src="http://www.minkbooks.com/content/monster4.gif">
+</section>
+</body>
+</html>

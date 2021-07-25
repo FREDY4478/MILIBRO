@@ -1,0 +1,61 @@
+body {
+    text-align: center;
+    }
+    #principal {
+    display: block;
+    width: 500px;
+    margin: 50px auto;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #999999;
+    background: #DDDDDD;
+    }
+    #titulo {
+    font:bold 36px verdana, sans-serif;
+}
+/*border-radius borde del radio*/
+body {
+    text-align: center;
+    }
+    #principal {
+    display: block;
+    width: 500px;
+    margin: 50px auto;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #999999;
+    background: #DDDDDD;
+    -moz-border-radius: 20px / 10px;
+    -webkit-border-radius: 20px / 10px;
+    border-radius: 20px / 10px;
+/*implementando box-shadow es un sombreado a la cajita*/
+   -moz-box-shadow: rgb(150,150,150) 5px 5px;
+   -webkit-box-shadow: rgb(150,150,150) 5px 5px;
+    box-shadow: rgb(150,150,150) 5px 5px;
+/* gradiente lineal aspecto mas profesional a la pagina*/
+    background: -webkit-linear-gradient(top, #FFFFFF, #006699);
+    background: -moz-linear-gradient(top, #FFFFFF, #006699);
+/*gradiante radial */
+    background: radial-gradient(center, circle, #FFFFFF 0%, #006699 200%);   
+    /*agregnado un segundo borde a nuestro cuadro*/
+    outline: 2px dashed #000099;
+    outline-offset: 15px;  
+    -moz-border-image: url("diamonds.png") 29 stretch;
+-webkit-border-image: url("diamonds.png") 29 stretch;
+border-image: url("diamonds.png") 29 stretch;
+    
+/*transformar a una escala 2*/
+-moz-transform: scale(2);
+-webkit-transform: scale(2);
+    }
+
+    #titulo {
+        font: bold 36px MiNuevaFuente, verdana, sans-serif;
+    /*sombreado al titulo*/
+    text-shadow: rgb(0,0,150) 3px 3px 5px;
+    }
+/*font-face*/
+@font-face {
+    font-family: 'MiNuevaFuente';
+    src: url('font.ttf');
+    }

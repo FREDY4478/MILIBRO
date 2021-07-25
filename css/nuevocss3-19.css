@@ -1,0 +1,24 @@
+body { 
+   text-align: center; 
+} 
+#principal {
+   display: block; 
+   width: 500px; 
+   margin: 50px auto; 
+   padding: 15px; 
+   text-align: center; 
+   border: 1px solid #999999; 
+   background: #DDDDDD; 
+   
+   -moz-transform: rotate(30deg); 
+   -webkit-transform: rotate(30deg); 
+} 
+#titulo { 
+   font: bold 36px MiNuevaFuente, verdana, sans-serif; 
+   text-shadow: rgba(0,0,0,0.5) 3px 3px 5px; 
+   color: hsla(120, 100%, 50%, 0.5); 
+} 
+@font-face { 
+   font-family: 'MiNuevaFuente'; 
+   src: url('font.ttf'); 
+}

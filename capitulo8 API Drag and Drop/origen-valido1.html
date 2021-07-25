@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Drag and Drop</title>
+<link rel="stylesheet" href="dragdrop.css">
+<script>
+    function iniciar(){
+var imagenes=document.querySelectorAll('#cajaimagenes > img');
+for(var i=0; i<imagenes.length; i++){
+imagenes[i].addEventListener('dragstart', arrastrado, false);
+imagenes[i].addEventListener('dragend', finalizado, false);
+}
+soltar=document.getElementById('lienzo');
+lienzo=soltar.getContext('2d');
+soltar.addEventListener('dragenter', function(e){
+e.preventDefault(); }, false);
+soltar.addEventListener('dragover', function(e){
+e.preventDefault(); }, false);
+soltar.addEventListener('drop', soltado, false);
+}
+function finalizado(e){
+elemento=e.target;
+elemento.style.visibility='hidden';
+}
+function arrastrado(e){
+elemento=e.target;
+e.dataTransfer.setData('Text', elemento.getAttribute('id'));
+e.dataTransfer.setDragImage(e.target, 0, 0);
+}
+
+function soltado(e){
+e.preventDefault();
+var id=e.dataTransfer.getData('Text');
+var elemento=document.getElementById(id);
+var posx=e.pageX-soltar.offsetLeft;
+var posy=e.pageY-soltar.offsetTop;
+lienzo.drawImage(elemento,posx,posy);
+}
+window.addEventListener('load', iniciar, false);
+</script>
+</head>
+<body>
+<section id="cajasoltar">
+<canvas id="lienzo" width="500" height="300"></canvas>
+</section>
+<section id="cajaimagenes">
+<img id="imagen1"
+src="http://www.minkbooks.com/content/monster1.gif">
+<img id="imagen2"
+src="http://www.minkbooks.com/content/monster2.gif">
+<img id="imagen3"
+src="http://www.minkbooks.com/content/monster3.gif">
+<img id="imagen4"
+src="http://www.minkbooks.com/content/monster4.gif">
+</section>
+</body>
+</html>
